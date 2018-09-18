@@ -140,14 +140,22 @@
 //   };
 //   console.log(bondTitles);
 
-const oddBonds = [];
+// const oddBonds = [];
 
+// for(i = 0; i < bondFilms.length; i++){
+//     if(i % 2 === 1){
+//         oddBonds.push(bondFilms[i].year);
+//     }
+// }
+// console.log(oddBonds);
+
+let grossBonds = 0;
 for(i = 0; i < bondFilms.length; i++){
-    if(i % 2 === 1){
-        oddBonds.push(bondFilms[i].year);
+   let newGross = bondFilms[i].gross.replace(/,/gi, "").replace("$","");
+   grossBonds += parseInt(newGross, 10);
     }
-}
-console.log(oddBonds);
+
+console.log(grossBonds);
 
 
 
